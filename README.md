@@ -25,9 +25,9 @@
   
   1. Need to clone the repository.
   2. Navigate to the directory.
-  3. Install dependencies needed by performing: npm install or npm i
-  4. Run npm run build.
-  5. Start the local host server by running npm start.
+  3. Install dependencies needed by performing: "npm install or npm i"
+  4. Run: "npm run build".
+  5. Start the local host server by running: "npm start".
 
   For Heroku app:
   1. Click on the heroku link provided.
