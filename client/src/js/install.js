@@ -2,19 +2,22 @@ const butInstall = document.getElementById('buttonInstall');
 var savedPrompt; // Saves the event to be used later
 
 // Logic for installing the PWA
-// TODO: Add an event handler to the `beforeinstallprompt` event
 window.addEventListener('beforeinstallprompt', (event) => {
-    event.preventDefault();
-    savedPrompt = event;
-});
-// TODO: Implement a click event handler on the `butInstall` element
-butInstall.addEventListener('click', async () => {
-    if (savedPrompt) {
-        savedPrompt.prompt();
-      }
+   event.preventDefault();
+//   The event triggers on page load, but we want to hold on to the event for later.
+   savedPrompt = event;
+
+   // the event only fires if the page recognizes the manifest, so if it does we can show the button
 });
 
-// TODO: Add an handler for the `appinstalled` event
+butInstall.addEventListener('click', async () => {
+   // Show the install prompt that we saved
+   if (savedPrompt) {
+     savedPrompt.prompt();
+   }
+});
+
 window.addEventListener('appinstalled', (event) => {
-    window.alert('App installed');
+   // do an alert saying "App installed"
+   window.alert('App installed');
 });
